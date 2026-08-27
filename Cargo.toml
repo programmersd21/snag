@@ -1,0 +1,25 @@
+[package]
+name = "snag-cli"
+version = "0.1.0"
+edition = "2021"
+authors = ["Soumalya Das"]
+license = "MIT"
+description = "A single-purpose Unix filter for extracting patterns from text streams"
+repository = "https://github.com/programmersd21/snag"
+readme = "README.md"
+keywords = ["cli", "grep", "extract", "regex", "unix"]
+categories = ["command-line-utilities", "text-processing"]
+
+[[bin]]
+name = "snag"
+path = "src/main.rs"
+
+[dependencies]
+regex = "1.10"
+serde_json = "1.0"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
